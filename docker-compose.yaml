@@ -1,0 +1,25 @@
+# docker compose
+services:
+  stable-d:
+    image: stable-d:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stable-d.theregion.beer
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - ./app:/stable-d
+      - ./home:/root
+      - ./images:/media/share/stable-d/images
+    ports:
+      - 8505:8505
+    restart: always
+    network_mode: bridge
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
