@@ -1,0 +1,6 @@
+net:
+    listen_port: 8505
+    listen_to_network: true
+force_save_path: /media/share/stable-d/images/
+ui:
+  open_browser_on_start: false
