@@ -11,8 +11,10 @@ This is set to run on 8505, not 9000 like the OG project. Portainer makes docker
 
 This should get it going. Let's say you keep your docker-compose's organized in /media/pool-0/[app-name]/docker-compose.yaml with all the other stuff needed in the [app-name] folder. If so, then this code block should get it going. 
 
+I think this needs the --build flag because I don't know if I pushed this up to the docker hub
+
 ```
 git clone https://github.com/phermeys/stable-d.git /media/pool-0/stable-d/
 cd /media/pool-0/stable-d/
-docker-compose up -d
+docker-compose up -d --build
 ```
